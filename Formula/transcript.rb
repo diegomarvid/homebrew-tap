@@ -3,7 +3,7 @@ class Transcript < Formula
   homepage "https://github.com/diegomarvid/transcript-app"
   version "1.1.0"
 
-  url "https://pub-7d99cd07d4d741d296b2c69112c91153.r2.dev/transcript-cli-arm64.tar.gz"
+  url "https://pub-7d99cd07d4d741d296b2c69112c91153.r2.dev/transcript-cli-1.1.0-arm64.tar.gz"
   sha256 "133677ca6665cba21fefc62dc9619e93349e774eec0c81b8d56e3bfcba5e95ca"
 
   depends_on arch: :arm64
