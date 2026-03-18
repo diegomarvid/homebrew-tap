@@ -1,10 +1,10 @@
 class Transcript < Formula
   desc "CLI for the Transcript App — manage recordings, tags, sharing, and detect meetings"
   homepage "https://github.com/diegomarvid/transcript-app"
-  version "1.3.3"
+  version "1.4.0"
 
-  url "https://pub-7d99cd07d4d741d296b2c69112c91153.r2.dev/transcript-cli-1.3.3-arm64.tar.gz"
-  sha256 "b48d8d8643a601059f32eb4e5da5a78ff8ca76896a9a1422d33aa7c23bf80df4"
+  url "https://pub-7d99cd07d4d741d296b2c69112c91153.r2.dev/transcript-cli-1.4.0-arm64.tar.gz"
+  sha256 "5739e6a721e747c53f1114692f5f4b30ce61505d3802cb97277ca56842ad394b"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
