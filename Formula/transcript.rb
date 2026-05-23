@@ -14,6 +14,6 @@ class Transcript < Formula
   end
 
   test do
-    assert_match "Transcript App CLI", shell_output("#{bin}/transcript --help")
+    assert_match "CLI for the Transcript App", shell_output("#{bin}/transcript --help")
   end
 end
