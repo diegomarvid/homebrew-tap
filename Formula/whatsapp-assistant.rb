@@ -1,8 +1,8 @@
 class WhatsappAssistant < Formula
   desc "Local WhatsApp recent-context bridge and CLI"
   homepage "https://github.com/diegomarvid/whatsapp-assistant"
-  url "https://github.com/diegomarvid/whatsapp-assistant/archive/refs/tags/v0.8.4.tar.gz"
-  sha256 "d8ecfd200933b97245e595fcb6eeda782f84822161e3d94e8e1a13939271fd77"
+  url "https://github.com/diegomarvid/whatsapp-assistant/archive/refs/tags/v0.8.6.tar.gz"
+  sha256 "fd2b2315048ea22e25009144ef0a8084191760c6ba11bed7a1053c5e61a606d9"
   license "MIT"
 
   depends_on "node@24"
@@ -13,8 +13,8 @@ class WhatsappAssistant < Formula
       #!/bin/bash
       export PATH="#{formula_opt_bin("node@24")}:$PATH"
       export WA_DAEMON_NODE="#{formula_opt_bin("node@24")}/node"
-      export WA_DAEMON_ENTRY="#{opt_prefix}/libexec/lib/node_modules/whatsapp-assistant/bin/wa.js"
-      export WA_DAEMON_CWD="#{opt_prefix}/libexec/lib/node_modules/whatsapp-assistant/src"
+      export WA_DAEMON_ENTRY="#{opt_prefix}/libexec/lib/node_modules/@diegomarvid/whatsapp-assistant/bin/wa.js"
+      export WA_DAEMON_CWD="#{opt_prefix}/libexec/lib/node_modules/@diegomarvid/whatsapp-assistant/src"
       exec "#{libexec}/bin/wa" "$@"
     EOS
   end
