@@ -1,15 +1,21 @@
 class WhatsappAssistant < Formula
   desc "Local WhatsApp recent-context bridge and CLI"
   homepage "https://github.com/diegomarvid/whatsapp-assistant"
-  url "https://github.com/diegomarvid/whatsapp-assistant/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "b258ded1f33faeabdd5e7861ca0c35c90106d2b16065c26678cb62c1898f4426"
+  url "https://github.com/diegomarvid/whatsapp-assistant/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "382bdb81087c4673190e78d959ff01b9b64cfec5dde41c7723abfd470cf9d66a"
   license "MIT"
 
   depends_on "node@24"
 
   def install
     system Formula["node@24"].opt_bin/"npm", "install", *std_npm_args
-    (bin/"wa").write_env_script libexec/"bin/wa", PATH: "#{Formula["node@24"].opt_bin}:$PATH"
+    (bin/"wa").write <<~EOS
+      #!/bin/bash
+      export PATH="#{Formula["node@24"].opt_bin}:$PATH"
+      export WA_DAEMON_NODE="#{Formula["node@24"].opt_bin}/node"
+      export WA_DAEMON_ENTRY="#{opt_prefix}/libexec/lib/node_modules/whatsapp-assistant/bin/wa.js"
+      exec "#{libexec}/bin/wa" "$@"
+    EOS
   end
 
   def caveats
