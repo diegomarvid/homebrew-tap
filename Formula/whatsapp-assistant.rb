@@ -4,11 +4,13 @@ class WhatsappAssistant < Formula
   url "https://github.com/diegomarvid/whatsapp-assistant/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "c227e54b0cc65080bea02881ccc2c58a9f0ac6d51055eeae600f67414af72046"
   license "MIT"
+  revision 1
 
   depends_on "node"
 
   def install
     system Formula["node"].opt_bin/"npm", "install", *std_npm_args
+    bin.install_symlink libexec/"bin/wa"
   end
 
   def caveats
