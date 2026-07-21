@@ -1,18 +1,18 @@
 class WhatsappAssistant < Formula
   desc "Local WhatsApp recent-context bridge and CLI"
   homepage "https://github.com/diegomarvid/whatsapp-assistant"
-  url "https://github.com/diegomarvid/whatsapp-assistant/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "0f8f6568469df4be1318fcd846985c649b9d695ad568f58572d58078a9408e9e"
+  url "https://github.com/diegomarvid/whatsapp-assistant/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "5ed552d987ec9fad99878711f00c8cd9a79439a4f70e880ea85ccbf91d9e82ec"
   license "MIT"
 
   depends_on "node@24"
 
   def install
-    system Formula["node@24"].opt_bin/"npm", "install", *std_npm_args
+    system formula_opt_bin("node@24")/"npm", "install", *std_npm_args
     (bin/"wa").write <<~EOS
       #!/bin/bash
-      export PATH="#{Formula["node@24"].opt_bin}:$PATH"
-      export WA_DAEMON_NODE="#{Formula["node@24"].opt_bin}/node"
+      export PATH="#{formula_opt_bin("node@24")}:$PATH"
+      export WA_DAEMON_NODE="#{formula_opt_bin("node@24")}/node"
       export WA_DAEMON_ENTRY="#{opt_prefix}/libexec/lib/node_modules/whatsapp-assistant/bin/wa.js"
       export WA_DAEMON_CWD="#{opt_prefix}/libexec/lib/node_modules/whatsapp-assistant/src"
       exec "#{libexec}/bin/wa" "$@"
