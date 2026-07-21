@@ -1,8 +1,8 @@
 class WhatsappAssistant < Formula
   desc "Local WhatsApp recent-context bridge and CLI"
   homepage "https://github.com/diegomarvid/whatsapp-assistant"
-  url "https://github.com/diegomarvid/whatsapp-assistant/archive/refs/tags/v0.8.6.tar.gz"
-  sha256 "fd2b2315048ea22e25009144ef0a8084191760c6ba11bed7a1053c5e61a606d9"
+  url "https://github.com/diegomarvid/whatsapp-assistant/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "c7b4e9d73c9cb94265dc714a49ae6b231e065938b06c0408b91158f8c880ba55"
   license "MIT"
 
   depends_on "node@24"
